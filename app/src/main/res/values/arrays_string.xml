@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movies">
+        <item>@string/item_pelicula1</item>
+        <item>@string/item_pelicula2</item>
+        <item>@string/item_pelicula3</item>
+        <item>@string/item_pelicula4</item>
+    </string-array>
+
+<integer-array name="status_icons">
+    <item>@drawable/baseline_3d_rotation_black_24dp</item>
+    <item>@drawable/baseline_account_box_black_24dp</item>
+</integer-array>
+
+</resources>

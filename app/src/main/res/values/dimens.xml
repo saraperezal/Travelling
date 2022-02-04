@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dimens_margin_screen">16dp</dimen>
+    <dimen name="dimens_margin_screen_exception">24dp</dimen>
+
+    <!--DIMENSIONES GENERICAS PANTALLAS-->
+    <dimen name="dimen12">12dp</dimen>
+    <dimen name="dimen14">14dp</dimen>
+    <dimen name="dimen20">20dp</dimen>
+    <dimen name="dimen30">30dp</dimen>
+    <dimen name="dimen18">18dp</dimen>
+    <dimen name="dimen40">40dp</dimen>
+    <dimen name="onboarding_margin_botton">100dp</dimen>
+</resources>
