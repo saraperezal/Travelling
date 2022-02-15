@@ -28,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        String[] peliculas = getResources().getStringArray(R.array.movies);
-
-        int [] iconos = getResources().getIntArray(R.array.status_icons);
         //iconos[0]
 
     }

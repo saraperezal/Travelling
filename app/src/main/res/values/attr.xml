@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name= "apperanceH4" format="reference" />
+    <attr name= "apperanceBody14" format="reference"/>
+    <attr name= "caption" format= "reference"/>
+</resources>

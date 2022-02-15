@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="onboarding_title">Tu App de Viajes</string>
     <string name="onboarding_subtitle">Hola, estamos buscando a millones de usuaruis con inquietudes y ganas de viajar. Si eres tú no lo dudes y accede a nuestra app y descubriras miles de destinos y facilidades para alquilar coches, ver el tiempo…</string>
@@ -6,4 +7,9 @@
     <string name="homeCard1Title">City of Los Angeles</string>
     <string name="homeCard2Info">Madives - 3weeks</string>
     <string name="homeCard2Title">Beach vacation</string>
+    <string name="forgotPassword">Forgot password <b>Get new</b></string>
+    <string name="createAccount">Do yo have account? <b>Create new</b></string>
+    <string name="loginTitle">Login</string>
+    <string name="loginButtonText">Login</string>
+    <string name="travelling">travellingAppName</string>
 </resources>
