@@ -12,8 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
-        <item name="apperanceBody14">@style/TextAppearance.MdcTypographyStyles.Body2</item>
-        <item name="apperanceH4">@style/TextAppearance.MdcTypographyStyles.Headline4</item>
-        <item name="caption">@style/TextAppearance.AppCompat.Caption</item>
+<!--        <item name="apperanceBody14">@style/TextAppearance.MdcTypographyStyles.Body2</item>-->
+<!--        <item name="apperanceH4">@style/TextAppearance.MdcTypographyStyles.Headline4</item>-->
+<!--        <item name="caption">@style/TextAppearance.AppCompat.Caption</item>-->
     </style>
 </resources>

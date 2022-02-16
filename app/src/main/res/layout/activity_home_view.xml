@@ -7,16 +7,16 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/titleTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/dimen14"
         android:gravity="start"
+        android:paddingVertical="@dimen/dimen14"
         android:text="@string/homeTitle"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/imageButton1"
@@ -95,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen20"
-            android:src="@drawable/ic_baseline_face_24"/>
+            android:src="@drawable/ic_baseline_face_24" />
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Barrier
@@ -127,24 +127,25 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_container1"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_container1" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="@dimen/dimen14"
                 android:gravity="start"
+                android:paddingHorizontal="@dimen/dimen14"
+                android:paddingVertical="10dp"
                 android:text="@string/homeCard1Info"
                 android:textSize="15sp"
                 android:textStyle="normal" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingHorizontal="@dimen/dimen14"
                 android:gravity="start"
+                android:paddingHorizontal="@dimen/dimen14"
+                android:paddingBottom="10dp"
                 android:text="@string/homeCard1Title"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -172,24 +173,25 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_container2"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_container2" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="@dimen/dimen14"
                 android:gravity="start"
+                android:paddingHorizontal="@dimen/dimen14"
+                android:paddingVertical="10dp"
                 android:text="@string/homeCard2Info"
                 android:textSize="15sp"
                 android:textStyle="normal" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingHorizontal="@dimen/dimen14"
                 android:gravity="start"
+                android:paddingHorizontal="@dimen/dimen14"
+                android:paddingBottom="10dp"
                 android:text="@string/homeCard2Title"
                 android:textSize="20sp"
                 android:textStyle="bold" />

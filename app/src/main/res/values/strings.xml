@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Travelling</string>
     <string name="onboarding_title">Tu App de Viajes</string>
     <string name="onboarding_subtitle">Hola, estamos buscando a millones de usuaruis con inquietudes y ganas de viajar. Si eres tú no lo dudes y accede a nuestra app y descubriras miles de destinos y facilidades para alquilar coches, ver el tiempo…</string>
     <string name="homeTitle">Upcoming meetups</string>

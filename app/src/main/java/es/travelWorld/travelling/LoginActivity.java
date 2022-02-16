@@ -1,4 +1,4 @@
-package es.travelWorld.travelling;
+package es.travelworld.travelling;
 
 public class LoginActivity {
 
