@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class OnboardingActivity extends AppCompatActivity {
     private Context context;
 
     @Override
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView title = findViewById(R.id.titleTextView);
         title.setOnClickListener(v -> {
-            Intent intent = new Intent(context, CardViewActivity.class);
+            Intent intent = new Intent(context, HomeActivity.class);
             startActivity(intent);
         });
 
