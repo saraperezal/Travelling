@@ -18,7 +18,7 @@ public class OnboardingActivity extends AppCompatActivity {
 
         TextView title = findViewById(R.id.titleTextView);
         title.setOnClickListener(v -> {
-            Intent intent = new Intent(context, HomeActivity.class);
+            Intent intent = new Intent(context, LoginActivity.class);
             startActivity(intent);
         });
 

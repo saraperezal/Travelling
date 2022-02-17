@@ -8,9 +8,10 @@
     <string name="homeCard1Title">City of Los Angeles</string>
     <string name="homeCard2Info">Madives - 3weeks</string>
     <string name="homeCard2Title">Beach vacation</string>
-    <string name="forgotPassword">Forgot password <b>Get new</b></string>
-    <string name="createAccount">Do yo have account? <b>Create new</b></string>
+    <string name="forgotPassword">Forgot password Get new</string>
+    <string name="createAccount">Do yo have account? Create new</string>
     <string name="loginTitle">Login</string>
     <string name="loginButtonText">Login</string>
     <string name="travelling">travellingAppName</string>
+    <string name="GetNew">GetNew</string>/>
 </resources>
