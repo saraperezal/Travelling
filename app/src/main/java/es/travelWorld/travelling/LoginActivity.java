@@ -1,8 +1,11 @@
 package es.travelworld.travelling;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,27 +13,61 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
+import es.travelworld.travelling.databinding.ActivityHomeViewBinding;
+import es.travelworld.travelling.databinding.ActivityLoginBinding;
+
 public class LoginActivity extends AppCompatActivity {
+    private ActivityLoginBinding binding;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        context = this;
 
-        TextView forgotPasswordTextView = findViewById(R.id.forgotPasswordTextView);
-        forgotPasswordTextView.setOnClickListener(v -> {
+        binding.forgotPasswordTextView.setText(Html.fromHtml(getString(R.string.forgotPassword), Html.FROM_HTML_MODE_LEGACY));
+        binding.forgotPasswordTextView.setOnClickListener(v -> {
             Snackbar.make(
-                    forgotPasswordTextView,
+                    binding.forgotPasswordTextView,
                     "This feature will be implemented soon",
                     BaseTransientBottomBar.LENGTH_SHORT
             ).show();
         });
 
-        TextView forgotPassword = findViewById(R.id.forgotPasswordTextView);
-        forgotPassword.setText(Html.fromHtml("Forgot password <b>Get new</b>"));
+        binding.createAccountTextView.setText(Html.fromHtml(getString(R.string.createAccount), Html.FROM_HTML_MODE_LEGACY));
+        binding.createAccountTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, RegisterActivity.class);
+            startActivity(intent);
+        });
+        binding.loginButton.setOnClickListener(v -> {
+            Intent intent = new Intent(context, HomeActivity.class);
+            startActivity(intent);
+        });
 
-        TextView createAccount = findViewById(R.id.createAccountTextView);
-        createAccount.setText(Html.fromHtml("Do you have account? <b>Create now</b>"));
+
+        setUpActionBar();
+    }
+
+    private void setUpActionBar() {
+        getSupportActionBar().setTitle(R.string.loginTitle);
+        //getSupportActionBar().setHomeEnabled(true); // for burger icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // burger icon related
+        getSupportActionBar().setDisplayShowCustomEnabled(true); // CRUCIAL - for displaying your custom actionbar
+        getSupportActionBar().setDisplayShowTitleEnabled(true); // false for hiding the title from actoinBar
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+        }
+        return true;
     }
 
 
