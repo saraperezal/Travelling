@@ -4,15 +4,16 @@
     <color name="onboarding_color">#ECDDFF</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="green_1">#CFFFF6</color>
+    <color name="green_2">#009688</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="error_suave">#6BF67167</color>
+    <color name="green_light">#CAEFE6</color>
     <color name="second_button">@color/purple_500</color>
     <color name="background_black">#393939</color>
     <color name="blue_button">#C9E4FF</color>
     <color name="purple_button">#EBDEFE</color>
     <color name="pink_button">#FFDCF5</color>
-    <color name="yellow_button">#FFF3AE</color>
+    <color name="yellow_button">#FFBE00</color>
+
 </resources>

@@ -6,4 +6,11 @@
 <!--        <item>@drawable/baseline_account_box_black_24dp</item>-->
 <!--    </integer-array>-->
 
+
+    <string-array name="register_array">
+        <item>0-5</item>
+        <item>6-11</item>
+        <item>12-17</item>
+        <item>18-99</item>
+    </string-array>
 </resources>

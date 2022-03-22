@@ -8,10 +8,18 @@
     <string name="homeCard1Title">City of Los Angeles</string>
     <string name="homeCard2Info">Madives - 3weeks</string>
     <string name="homeCard2Title">Beach vacation</string>
-    <string name="forgotPassword">Forgot password Get new</string>
-    <string name="createAccount">Do yo have account? Create new</string>
+    <string name="forgotPassword"><![CDATA[Forgot password <b>Get new</b>]]></string>
+    <string name="createAccount"><![CDATA[Do you have account? <b>Create now</b>]]></string>
     <string name="loginTitle">Login</string>
     <string name="loginButtonText">Login</string>
     <string name="travelling">travellingAppName</string>
-    <string name="GetNew">GetNew</string>/>
+    <string name="getNew">GetNew</string>
+    <string name="register">Register</string>
+    <string name="me_apunto">Me apunto</string>
+    <string name="privacyPolicy"><![CDATA[Política de privacidad <b>Ver Condiciones</b>]]></string>
+    <string name="name_hint">¿Cómo te llamas?</string>
+    <string name="name_surname_error">Ups, no creo que sea correcto, revísalo</string>
+    <string name="age_error">Esta app no es para ti</string>
+
+
 </resources>
