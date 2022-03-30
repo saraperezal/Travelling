@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -50,6 +51,29 @@ public class RegisterActivity extends AppCompatActivity {
         setUpSpinner();
         setUpActionBar();
         setUpListeners();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_register, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            case R.id.castleIcon:
+                gotoUrl("https://www.disneylandparis.com/es-es/");
+                break;
+            case R.id.carIcon:
+                Intent intent = new Intent(context, FragmentActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
     }
 
     private TextWatcher getTextWatcher(TextInputLayout textInputLayout) {
@@ -139,17 +163,6 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // burger icon related
         getSupportActionBar().setDisplayShowCustomEnabled(true); // CRUCIAL - for displaying your custom actionbar
         getSupportActionBar().setDisplayShowTitleEnabled(true); // false for hiding the title from actoinBar
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-        }
-        return true;
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;

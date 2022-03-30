@@ -6,14 +6,12 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
-import es.travelworld.travelling.databinding.ActivityHomeViewBinding;
 import es.travelworld.travelling.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -48,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        setUpActionBar();
+        //setUpActionBar();
     }
 
     private void setUpActionBar() {

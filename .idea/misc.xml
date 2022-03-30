@@ -10,17 +10,22 @@
         <entry key="app/src/main/res/drawable/ic_arrow_drop_down.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/drawable/ic_arrow_drop_down_black_24dp.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/ic_background_onboarding.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_castle.xml" value="0.101" />
+        <entry key="app/src/main/res/drawable/ic_baseline_directions_car_24.xml" value="0.101" />
         <entry key="app/src/main/res/drawable/selector_password_toggle_icon.xml" value="0.20555555555555555" />
         <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/activity_fragment.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/activity_home_view.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2820632934570313" />
         <entry key="app/src/main/res/layout/activity_register_activiy.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/animation_test.xml" value="0.11770833333333333" />
+        <entry key="app/src/main/res/layout/fragment_car.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_item_detail.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.16574074074074074" />
         <entry key="app/src/main/res/layout/item_list_content.xml" value="0.2359375" />
+        <entry key="app/src/main/res/menu/menu_register.xml" value="0.1" />
       </map>
     </option>
   </component>
