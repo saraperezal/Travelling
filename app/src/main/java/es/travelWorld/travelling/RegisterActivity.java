@@ -91,14 +91,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 String text = s.toString();
-                //runAfterTextChanged(text, textInputLayout);
+                boolean containsInvalidChars = containsInvalidChars(text);
+                checkSignButton();
 
-//                boolean containsInvalidChars = text.contains("@") || text.contains("!");
-//                textInputLayout.setErrorEnabled(containsInvalidChars);
-//                textInputLayout.setError(getString(R.string.name_surname_error));
-
-
-                if (text.contains("@") || text.contains("!")) {
+                if (containsInvalidChars) {
                     textInputLayout.setErrorEnabled(true);
                     textInputLayout.setError(getString(R.string.name_surname_error));
                 } else {
@@ -106,6 +102,24 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         };
+
+    }
+
+    private boolean containsInvalidChars(String text) {
+        return text.contains("@") || text.contains("!");
+    }
+
+
+    private void checkSignButton() {
+        String nameText = String.valueOf(binding.mainNameEditText.getText());
+        String surnameText = String.valueOf(binding.mainSurnameEditText.getText());
+
+        boolean isNameValid = !nameText.isEmpty() && !containsInvalidChars(nameText);
+        boolean isSurnameValid = !surnameText.isEmpty() && !containsInvalidChars(surnameText);
+        boolean isButtonEnabled = isNameValid && isSurnameValid;
+
+        binding.signInButton.setEnabled(isButtonEnabled);
+
 
     }
 

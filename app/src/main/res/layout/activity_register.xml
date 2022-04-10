@@ -56,8 +56,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userImageCardView"
-            app:passwordToggleDrawable="@drawable/selector_password_toggle_icon"
-            app:passwordToggleEnabled="true"
+            app:passwordToggleEnabled="false"
             app:startIconDrawable="@drawable/ic_add_a_photo">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -83,7 +82,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mainNameInputLayout"
-            app:passwordToggleDrawable="@drawable/selector_password_toggle_icon"
             app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/ic_add_a_photo">
 
@@ -92,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionDone"
-                android:inputType="textCapWords">
+                android:inputType="textPassword">
 
             </com.google.android.material.textfield.TextInputEditText>
 
