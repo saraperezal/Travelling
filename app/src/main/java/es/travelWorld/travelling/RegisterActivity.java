@@ -1,6 +1,7 @@
 package es.travelworld.travelling;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -169,6 +170,17 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        binding.signInButton.setOnClickListener(v -> {
+            String nameText = String.valueOf(binding.mainNameEditText.getText());
+            String surnameText = String.valueOf(binding.mainSurnameEditText.getText());
+            Intent resultIntent = new Intent();
+
+            resultIntent.putExtra("name", nameText);
+            resultIntent.putExtra("surname", surnameText);
+            setResult(Activity.RESULT_OK, resultIntent);
+            finish();
+        });
+
     }
 
     private void setUpActionBar() {
@@ -192,6 +204,7 @@ public class RegisterActivity extends AppCompatActivity {
             //}
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

@@ -1,5 +1,6 @@
 package es.travelworld.travelling;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,9 +8,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,8 +25,20 @@ import es.travelworld.travelling.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private Context context;
-    private final String NAME = "Sara";
-    private final String SURNAME = "Perez";
+    private String NAME = "";
+    private String SURNAME = "";
+
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent data = result.getData();
+                    NAME = data.getStringExtra("name");
+                    SURNAME = data.getStringExtra("surname");
+                    Log.e("XXX", "name=" + NAME + " ,surname=" + SURNAME);
+                }
+            });
+
 
 
     @Override
@@ -48,8 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.createAccountTextView.setText(Html.fromHtml(getString(R.string.createAccount), Html.FROM_HTML_MODE_LEGACY));
         binding.createAccountTextView.setOnClickListener(v -> {
             Intent intent = new Intent(context, RegisterActivity.class);
-            //startActivityForResult(intent, 1);
-            startActivity(intent);
+            someActivityResultLauncher.launch(intent);
         });
 
 
