@@ -33,12 +33,11 @@ public class LoginActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
-                    NAME = data.getStringExtra("name");
-                    SURNAME = data.getStringExtra("surname");
+                    NAME = data.getStringExtra(RegisterActivity.NAME_KEY);
+                    SURNAME = data.getStringExtra(RegisterActivity.SURNAME_KEY);
                     Log.e("XXX", "name=" + NAME + " ,surname=" + SURNAME);
                 }
             });
-
 
 
     @Override

@@ -30,6 +30,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import es.travelworld.travelling.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
+    public static String NAME_KEY = "name";
+    public static String SURNAME_KEY = "surname";
+
     Context context;
     TextView policyTextView;
     ImageView userPhoto;
@@ -175,8 +178,8 @@ public class RegisterActivity extends AppCompatActivity {
             String surnameText = String.valueOf(binding.mainSurnameEditText.getText());
             Intent resultIntent = new Intent();
 
-            resultIntent.putExtra("name", nameText);
-            resultIntent.putExtra("surname", surnameText);
+            resultIntent.putExtra(NAME_KEY, nameText);
+            resultIntent.putExtra(SURNAME_KEY, surnameText);
             setResult(Activity.RESULT_OK, resultIntent);
             finish();
         });
