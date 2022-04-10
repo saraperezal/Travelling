@@ -22,6 +22,9 @@
     <string name="age_error">Esta app no es para ti</string>
     <string name="menu_castle_icon">Castle</string>
     <string name="menu_car_icon">Car</string>
+    <string name="login_dialog_ok">Entendido</string>
+    <string name="login_dialog_title">Usuario y contraseña no válidos</string>
+    <string name="login_dialog_description">Por favor, compruebe su usuario y contraseña</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -1,12 +1,16 @@
 package es.travelworld.travelling;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
@@ -17,6 +21,9 @@ import es.travelworld.travelling.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private Context context;
+    private final String NAME = "Sara";
+    private final String SURNAME = "Perez";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         context = this;
+
+        binding.loginEditText.addTextChangedListener(getTextWatcher());
+        binding.passwordEditText.addTextChangedListener(getTextWatcher());
 
         binding.forgotPasswordTextView.setText(Html.fromHtml(getString(R.string.forgotPassword), Html.FROM_HTML_MODE_LEGACY));
         binding.forgotPasswordTextView.setOnClickListener(v -> {
@@ -38,11 +48,27 @@ public class LoginActivity extends AppCompatActivity {
         binding.createAccountTextView.setText(Html.fromHtml(getString(R.string.createAccount), Html.FROM_HTML_MODE_LEGACY));
         binding.createAccountTextView.setOnClickListener(v -> {
             Intent intent = new Intent(context, RegisterActivity.class);
+            //startActivityForResult(intent, 1);
             startActivity(intent);
         });
+
+
         binding.loginButton.setOnClickListener(v -> {
-            Intent intent = new Intent(context, HomeActivity.class);
-            startActivity(intent);
+            if (binding.loginEditText.getText().toString().equals(NAME) && binding.passwordEditText.getText().toString().equals(SURNAME)) {
+                Intent intent = new Intent(context, HomeActivity.class);
+                startActivity(intent);
+            } else {
+                new AlertDialog.Builder(context)
+                        .setTitle(getString(R.string.login_dialog_title))
+                        .setMessage(getString(R.string.login_dialog_description))
+                        .setCancelable(false)
+                        .setPositiveButton(getString(R.string.login_dialog_ok), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).show();
+            }
         });
 
 
@@ -68,5 +94,38 @@ public class LoginActivity extends AppCompatActivity {
         return true;
     }
 
+    //   private void runAfterTextChanged(String text, TextInputLayout textInputLayout) {
 
+    private TextWatcher getTextWatcher() {
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkLoginButton();
+            }
+        };
+    }
+
+    private void checkLoginButton() {
+        String userNameText = String.valueOf(binding.loginEditText.getText());
+        String userPasswordText = String.valueOf(binding.passwordEditText.getText());
+
+        boolean isNameTextValid = !userNameText.isEmpty();
+        boolean isPasswordTextValid = !userPasswordText.isEmpty();
+        boolean isButtonEnabled = isNameTextValid && isPasswordTextValid;
+
+        binding.loginButton.setEnabled(isButtonEnabled);
+
+
+    }
 }
+
