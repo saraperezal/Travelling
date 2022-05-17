@@ -1,6 +1,7 @@
 package es.travelworld.travelling;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -142,10 +143,13 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void setUpSpinner() {
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.register_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        binding.ageSpinner.setAdapter(adapter);
+        @SuppressLint("ResourceType") ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, R.array.register_array);
+
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+//                R.array.register_array, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        binding.ageAutoComplete.setAdapter(adapter);
     }
 
     private void setUpListeners() {
@@ -153,10 +157,13 @@ public class RegisterActivity extends AppCompatActivity {
         binding.mainNameEditText.addTextChangedListener(getTextWatcher(binding.mainNameInputLayout));
         binding.mainSurnameEditText.addTextChangedListener(getTextWatcher(binding.mainSurnameInputLayout));
 
-        binding.ageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*val items = listOf("Material", "Design", "Components", "Android")
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
+        (textField.editText as? AutoCompleteTextView)?.setAdapter(adapter)*/
+
+        binding.ageAutoComplete.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String itemValue = binding.ageSpinner.getSelectedItem().toString();
                 //Log.e("XXX", "position=" + position + " id=" + id + "Selected item : " + itemValue);
 
                 if (position < 3) {
