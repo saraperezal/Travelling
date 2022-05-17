@@ -6,16 +6,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import es.travelworld.travelling.databinding.ActivityHomeViewBinding;
+import es.travelworld.travelling.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private ActivityHomeViewBinding binding;
+    private ActivityHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityHomeViewBinding.inflate(getLayoutInflater());
+        binding = ActivityHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         setUpActionBar();
