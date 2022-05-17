@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:imeOptions="actionNext"
-                android:inputType="textCapWords">
+                android:inputType="text">
 
             </com.google.android.material.textfield.TextInputEditText>
 
