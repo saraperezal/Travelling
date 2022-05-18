@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -28,17 +27,14 @@ public class LoginActivity extends AppCompatActivity {
     private String NAME = "";
     private String SURNAME = "";
 
-    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
+    ActivityResultLauncher<Intent> someActivityResultLauncher =
+            registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
                     NAME = data.getStringExtra(RegisterActivity.NAME_KEY);
                     SURNAME = data.getStringExtra(RegisterActivity.SURNAME_KEY);
-                    Log.e("XXX", "name=" + NAME + " ,surname=" + SURNAME);
                 }
             });
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +64,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
         binding.loginButton.setOnClickListener(v -> {
-            if (binding.loginEditText.getText().toString().equals(NAME) && binding.passwordEditText.getText().toString().equals(SURNAME)) {
+            if (binding.loginEditText.getText().toString().equals(NAME) &&
+                    binding.passwordEditText.getText().toString().equals(SURNAME)
+            ) {
                 Intent intent = new Intent(context, HomeActivity.class);
                 startActivity(intent);
             } else {
