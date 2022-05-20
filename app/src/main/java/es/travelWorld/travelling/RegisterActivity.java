@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                         gotoUrl("https://www.disneylandparis.com/es-es/");
                         break;
                     case R.id.carIcon:
-                        Intent intent = new Intent(context, FragmentActivity.class);
+                        Intent intent = new Intent(context, CarActivity.class);
                         startActivity(intent);
                         break;
                 }
