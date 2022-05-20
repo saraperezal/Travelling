@@ -64,11 +64,8 @@ public class LoginFragment extends Fragment {
 
         binding.createAccountTextView.setText(Html.fromHtml(getString(R.string.createAccount), Html.FROM_HTML_MODE_LEGACY));
         binding.createAccountTextView.setOnClickListener(v -> {
-            // TODO inlflar el fragment en LoginActivity
-            Intent intent = new Intent(requireContext(), RegisterActivity.class);
-            someActivityResultLauncher.launch(intent);
+            ((NewLoginActivity) requireActivity()).showRegisterFragment();
         });
-
 
         binding.loginButton.setOnClickListener(v -> {
             if (binding.loginEditText.getText().toString().equals(NAME) &&

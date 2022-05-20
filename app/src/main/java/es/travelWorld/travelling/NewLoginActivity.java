@@ -18,6 +18,13 @@ public class NewLoginActivity extends AppCompatActivity {
         binding = ActivityLoginNewBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragment_container_view, LoginFragment.class, null)
+                    .commit();
+        }
     }
 
     @Override
@@ -28,5 +35,12 @@ public class NewLoginActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    public void showRegisterFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .setReorderingAllowed(true)
+                .add(R.id.fragment_container_view, RegisterFragment.class, null)
+                .commit();
     }
 }
