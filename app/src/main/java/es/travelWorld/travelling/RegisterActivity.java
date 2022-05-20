@@ -13,18 +13,18 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.MenuProvider;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -35,8 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
     public static String SURNAME_KEY = "surname";
 
     Context context;
-    TextView policyTextView;
-    ImageView userPhoto;
 
     private ActivityRegisterBinding binding;
 
@@ -56,29 +54,32 @@ public class RegisterActivity extends AppCompatActivity {
         setUpSpinner();
         setUpActionBar();
         setUpListeners();
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_register, menu);
-        return true;
-    }
+        addMenuProvider(new MenuProvider() {
+            @Override
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+                menuInflater.inflate(R.menu.menu_register, menu);
+            }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-            case R.id.castleIcon:
-                gotoUrl("https://www.disneylandparis.com/es-es/");
-                break;
-            case R.id.carIcon:
-                Intent intent = new Intent(context, FragmentActivity.class);
-                startActivity(intent);
-                break;
-        }
-        return true;
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case android.R.id.home:
+                        onBackPressed();
+                        break;
+                    case R.id.castleIcon:
+                        gotoUrl("https://www.disneylandparis.com/es-es/");
+                        break;
+                    case R.id.carIcon:
+                        Intent intent = new Intent(context, FragmentActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+
+        });
     }
 
     private TextWatcher getTextWatcher(TextInputLayout textInputLayout) {
