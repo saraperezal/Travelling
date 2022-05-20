@@ -40,6 +40,10 @@
             android:exported="true"
             android:theme="@style/Theme.Travelling.NoActionBar" />
         <activity
+            android:name=".NewLoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Travelling.NoActionBar" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
     </application>

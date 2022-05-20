@@ -24,7 +24,8 @@ public class OnboardingActivity extends AppCompatActivity {
         setContentView(view);
 
         binding.getRoot().setOnClickListener(v -> {
-            Intent intent = new Intent(context, LoginActivity.class);
+            //Intent intent = new Intent(context, LoginActivity.class);
+            Intent intent = new Intent(context, NewLoginActivity.class);
             startActivity(intent);
         });
         //title.setVisibility(View.GONE);
