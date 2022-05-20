@@ -28,6 +28,15 @@ public class NewLoginActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -41,6 +50,7 @@ public class NewLoginActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fragment_container_view, RegisterFragment.class, null)
+                .addToBackStack("REGISTER")
                 .commit();
     }
 }
